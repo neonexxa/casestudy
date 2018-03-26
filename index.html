@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="underground/MDB/css/compiled.min.css">
 </head>
 <body class="hidden-sn">
-
+    <div id="vueapp">
     <!--Double navigation-->
     <header>
         <!-- Navbar -->
@@ -19,16 +19,16 @@
 	            </div>
 	            <ul class="nav navbar-nav nav-flex-icons ml-auto">
 	                <li class="nav-item">
-	                    <a class="nav-link"><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">About</span></a>
+	                    <router-link to="/about" class="nav-link" ><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">About</span></router-link>
 	                </li>
 	                <li class="nav-item">
-	                    <a class="nav-link"><i class="fa fa-phone"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
+	                    <router-link to="/contact" class="nav-link"><i class="fa fa-phone"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></router-link>
 	                </li>
 	                <li class="nav-item">
-	                    <a class="nav-link"><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Blog</span></a>
+	                    <router-link to="/blog" class="nav-link"><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Blog</span></router-link>
 	                </li>
 	                <li class="nav-item">
-	                    <a class="nav-link"><i class="fa fa-newspaper-o"></i> <span class="clearfix d-none d-sm-inline-block">FREE Case Study</span></a>
+	                    <router-link to="/freecasestudy" class="nav-link"><i class="fa fa-newspaper-o"></i> <span class="clearfix d-none d-sm-inline-block">FREE Case Study</span></router-link>
 	                </li>
 	                <!-- <li class="nav-item dropdown">
 	                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,12 +50,14 @@
     <!--Main Layout-->
     <main>
         <div class="container">
-            <h2>haha</h2>
-            <div style="height: 2000px"></div>
+            
+        <router-view></router-view>
         </div>
     </main>
     <!--Main Layout-->
-
+</div>
+<br>
+<br>
 <!--Footer-->
 <footer class="page-footer font-small indigo pt-0">
 
@@ -71,29 +73,29 @@
                 <div class="mb-5 flex-center">
 
                     <!--Facebook-->
-                    <a class="fb-ic">
+                    <router-link to="/fbsocial" class="fb-ic">
                         <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                    </a>
+                    </router-link>
                     <!--Twitter-->
-                    <a class="tw-ic">
+                    <router-link to="/twittersocial" class="tw-ic">
                         <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                    </a>
+                    </router-link>
                     <!--Google +-->
-                    <a class="gplus-ic">
+                    <router-link to="/googleplussocial" class="gplus-ic">
                         <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                    </a>
+                    </router-link>
                     <!--Linkedin-->
-                    <a class="li-ic">
+                    <router-link to="/linkedinsocial" class="li-ic">
                         <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                    </a>
+                    </router-link>
                     <!--Instagram-->
-                    <a class="ins-ic">
+                    <router-link to="/instasocial" class="ins-ic">
                         <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                    </a>
+                    </router-link>
                     <!--Pinterest-->
-                    <a class="pin-ic">
+                    <router-link to="/pinterestsocial" class="pin-ic">
                         <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
-                    </a>
+                    </router-link>
                 </div>
             </div>
             <!--/First column-->
@@ -111,7 +113,152 @@
 
 </footer>
 <!--/Footer-->
-                      
-	<script src="./underground/MDB/js/compiled.min.js"></script>
+                      <template id="about-template">
+                          <div class="row">
+                            <div class="col-md-6">
+                                <h2>About Azfarnism</h2>
+                                <p class="text-justify">Azfarnism is an entrepreneur from Shah Alam, Malaysia who studied in the United Kingdom and has had experience starting up 3 successful companies by the age of 22.</p>
+                                <p class="text-justify">Azfarnism is a Marketing Consultant that helps Caterers and Restaurant Owners profit wildly through Integrated Marketing. He has personally managed a large ad spend on behalf of clients and been able to consistently prove ROI.</p>
+                                <p class="text-justify">Azfarnism's clients are some of the fastest growing companies in Malaysia and he has helped them gain choke holds in their respective markets.</p>
+                                <button class="btn btn-primary"> FREE Case Study </button>
+                            </div>
+                            <div class="col-md-6"><img src="https://www.azfarnism.com/hosted/images/87/bff3e0043211e8956abbed7b011151/Untitled-design-_3_.png" alt="" style="width: inherit; height: 80%">
+                            </div>
+                          </div>
+                      </template>
+                      <template id="contact-template">
+                          <div class="row">
+                            <div class="col-md-6">
+                                <h2>Want to get in touch?  Let's talk!</h2>
+                                <p class="text-justify">To contact Azfarnism or his staff please use the following information. Azfarnism and his staff operate Monday – Friday 9am – 5pm Coordinated Universal Time (UTC). To contact Azfarnism or his team please use the information below:</p>
+                                <p class="text-justify">Email: azfar@azfarnism.com</p>
+                                <p class="text-justify">Phone: +6011-1001 0121</p>
+                                <button class="btn btn-primary"> FREE Case Study </button>
+                            </div>
+                            <div class="col-md-6"><img src="https://www.azfarnism.com/hosted/images/87/bff3e0043211e8956abbed7b011151/Untitled-design-_3_.png" alt="" style="width: inherit; height: 80%">
+                            </div>
+                          </div>
+                      </template>
+                      <template id="blog-template">
+                          <div class="row">
+                            <div class="col-md-12">
+                                <h2>Demands increase to more than 100%</h2>
+                                <p>Written by Mohd Zulfadhli Arman, Writer at Azfarnism Ltd. Article written on Feb. 3rd 2018</p>
+                                <img src="https://www.azfarnism.com/hosted/images/93/e7153012ac11e88b613d5414d91f93/Kak-Fatimah---Sidah.png" alt="" style="width: inherit; height: 80%">
+                                <p> haha</p>
+                                <button class="btn btn-default"> Read Full Article </button>
+                            </div>
+                          </div>
+                      </template>
+                      <template id="freecasestudy-template">
+                          <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-center blue-text">Case Study For Caterers & Restaurant Owners:</p>
+                                <h2 class="text-center">"How I Get 30-50 High Paying Caterings & Restaurant Clients Every Single Month With Predictability Down To The Dollar And Day "</h2>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://www.azfarnism.com/hosted/images/d1/615f8012aa11e8b8d3a399aefd5347/28034777_10212639580198433_1565381978_o.jpg" alt="" style="width: inherit; height: 80%">
+                            </div>
+                            <div class="col-md-6">
+                                <p>FREE Case Study Reveals:</p>
+                                <p>Why you need a niche and a "proof of concept"</p>
+                                <p>The secret weapon of all 6-figures Caterers and Restaurant Owners</p>
+                                <p>The simple two-step system to get high value clients</p>
+                                <router-link to="/freecasestudy-inner1" tag="button" class="btn btn-primary"> Get Your Case Study Now >> </router-link>
+                            </div>
+                          </div>
+                      </template>
+                      <template id="freecasestudy_inner1-template">
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <div class="card text-center">
+                                    <div class="card-header success-color white-text">
+                                        Step One:  <strong>Watch This Video Case Study Right Now</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <iframe src="https://player.vimeo.com/video/256027920" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                        <!-- <a class="btn btn-success btn-sm">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card text-center">
+                                    <div class="card-header success-color white-text">
+                                        Step Two:  <strong>Apply Now To See If You Qualify</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- <h4 class="card-title">Special title treatment</h4> -->
+                                        <p class="card-text">Now that you’ve absorbed all the cool training above, if you feel you’re ready to STEP UP and move forwards fast with your business then apply now and let’s see how I can help EXPLODE your business by clicking below now…</p>
+                                        <router-link to="/schedule"  class="btn btn-success btn-lg">Apply Now To See If You Qualify >></a>
+                                    </div>
+                                    <!-- <div class="card-footer text-muted success-color white-text">
+                                        <p class="mb-0">2 days ago</p>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                        </div>
+                      </template>
+                      <template id="schedule-template">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <h2 class="text-center">Schedule Your Breakthrough Strategy Session With Azfarnism Right Now</h2>
+                                  <p class="text-center">haha patutnye ade ape kat sini ? </p>
+                              </div>
+                          </div>
+                      </template>
+
+<script src="./underground/MDB/js/compiled.min.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+    
+
+// 1. Define route components.
+// These can be imported from other files
+const About = { template: '#about-template' }
+const Contact = { template: '#contact-template' }
+const Blog = { template: '#blog-template' }
+const Freecasestudy = { template: '#freecasestudy-template' }
+const Freecasestudy1 = { template: '#freecasestudy_inner1-template' }
+const Schedule = { template: '#schedule-template' }
+const fbsocial = { template: 'fbsocial' }
+const twittersocial = { template: 'twittersocial' }
+const googleplussocial = { template: 'googleplussocial' }
+const linkedinsocial = { template: 'linkedinsocial' }
+const instasocial = { template: 'instasocial' }
+const pinterestsocial = { template: 'pinterestsocial' }
+// 2. Define some routes
+// Each route should map to a component. The "component" can
+// either be an actual component constructor created via
+// Vue.extend(), or just a component options object.
+// We'll talk about nested routes later.
+const routes = [
+  { path: '/about', component: About },
+  { path: '/contact', component: Contact },
+  { path: '/blog', component: Blog },
+  { path: '/freecasestudy', component: Freecasestudy },
+  { path: '/freecasestudy-inner1', component: Freecasestudy1 },
+  { path: '/schedule', component: Schedule }
+  
+]
+
+// 3. Create the router instance and pass the `routes` option
+// You can pass in additional options here, but let's
+// keep it simple for now.
+const router = new VueRouter({
+  routes
+})
+
+// 4. Create and mount the root instance.
+// Make sure to inject the router with the router option to make the
+// whole app router-aware.
+const app = new Vue({
+  router
+}).$mount('#vueapp')
+
+// Now the app has started!
+</script>
 </body>
 </html>
